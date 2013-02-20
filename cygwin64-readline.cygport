@@ -1,0 +1,28 @@
+CROSS_HOST="x86_64-pc-cygwin"
+inherit cross
+
+NAME="cygwin64-readline"
+VERSION=6.2
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Readline for Cygwin 64bit toolchain"
+DESCRIPTION="The Readline library provides a set of functions for use by
+applications that allow users to edit command lines as they are typed in.
+Both Emacs and vi editing modes are available.  The Readline library includes
+additional functions to maintain a list of previously-entered command lines,
+to recall and perhaps reedit those lines, and perform csh-like history
+expansion on previous commands."
+HOMEPAGE="http://www.gnu.org/software/readline"
+SRC_URI="mirror://gnu/readline/readline-${VERSION}.tar.gz"
+SRC_DIR="readline-${VERSION}"
+
+export DLLVERSION=7
+
+NO_AUTOHEADER=1
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	rm -fr ${D}${CROSS_DATADIR}
+}
