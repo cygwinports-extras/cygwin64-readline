@@ -3,7 +3,7 @@ inherit cross
 
 NAME="cygwin64-readline"
 VERSION=6.2
-RELEASE=1
+RELEASE=2
 CATEGORY="Devel"
 SUMMARY="Readline for Cygwin 64bit toolchain"
 DESCRIPTION="The Readline library provides a set of functions for use by
